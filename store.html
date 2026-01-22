@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Store Info | Klemm's Bakery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+
+    <link rel="icon" type="image/png" href="images/Logo.png">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-main">Klemm's</span>
+                <span class="logo-sub">Bakery</span>
+            </a>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="store.html" class="active">Store Info</a>
+                <a href="menu.html">Menu</a>
+                <a href="cakes.html">Cakes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <h1>Store Information</h1>
+                <p>Everything you need to know before you visit.</p>
+            </div>
+        </section>
+
+        <!-- Location + hours -->
+        <section class="section">
+            <div class="container grid-2">
+                <div>
+                    <h2>Location</h2>
+                    <p>
+                        <strong>Klemm's Bakery</strong><br />
+                        29 Indian Rock Rd<br />
+                        Windham, NH 03087
+                    </p>
+                    <p><strong>Phone:</strong> <a href="tel:16034378810">(603) 437-8810</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:klemmsbakery1@gmail.com">klemmsbakery1@gmail.com</a></p>
+
+                    <p><strong>Price range:</strong> $1 – $10 per person</p>
+                    <p class="small">Plenty of parking available in the plaza lot.</p>
+                </div>
+                <div>
+                    <h2>Hours</h2>
+                    <table class="hours-table">
+                        <tbody>
+                            <tr>
+                                <td>Monday</td>
+                                <td>6 AM – 7 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Tuesday</td>
+                                <td>6 AM – 7 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Wednesday</td>
+                                <td>6 AM – 7 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td>
+                                <td>6 AM – 7 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td>6 AM – 7 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Saturday</td>
+                                <td>6 AM – 7 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Sunday</td>
+                                <td>6 AM – 6 PM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="small">Hours may change on holidays. Call ahead for major holidays and storms.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map -->
+        <section class="section soft-bg">
+            <div class="container">
+                <h2>Map</h2>
+                <p class="small">Find us in the plaza on Indian Rock Road in Windham, NH.</p>
+                <div class="map-embed">
+                    <iframe src="https://www.google.com/maps?q=Klemm's%20Bakery%20Windham%20NH&output=embed"
+                        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <p>
+                    29 Indian Rock Rd, Windham, NH 03087<br />
+                    Phone: <a href="tel:16034378810">(603) 437-8810</a><br />
+                    Email: <a href="mailto:klemmsbakery1@gmail.com">klemmsbakery1@gmail.com</a>
+                </p>
+            </div>
+            <div>
+                <p class="small">© <span id="year">2025</span> Klemm's Bakery. All rights reserved.</p>
+                <p class="small">
+                    <a href="https://www.facebook.com/klemmsbakery" target="_blank" rel="noopener">Find us on
+                        Facebook</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // simple year update
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

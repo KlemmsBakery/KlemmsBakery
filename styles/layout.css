@@ -1,0 +1,448 @@
+/* ----------------------------------
+   HEADER & NAVIGATION
+---------------------------------- */
+
+.site-header {
+    background: var(--red);
+    /* shirt red */
+    color: #ffffff;
+    border-bottom: 4px solid #000;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* Logo */
+
+.logo {
+    text-decoration: none;
+    display: inline-flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+/* Main logo text – white with black outline like the shirt */
+.logo-main {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: clamp(2rem, 2.4vw, 2.4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    color: #ffffff;
+    text-shadow:
+        -2px -1px 0 #000,
+        2px -1px 0 #000,
+        -2px 1px 0 #000,
+        2px 1px 0 #000;
+}
+
+/* “Bakery” subtext */
+.logo-sub {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-top: 0.2rem;
+    text-shadow: 0 0 2px #000;
+}
+
+/* Desktop nav */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    padding-bottom: 0.2rem;
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition-fast), border-color var(--transition-fast);
+    text-shadow: 0 0 2px #000;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+    color: #fffbe8;
+    border-color: #ffffff;
+}
+
+.main-nav a.active {
+    border-color: #000;
+}
+
+/* Header responsiveness */
+
+@media (max-width: 720px) {
+    .header-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+        padding: 0.75rem 0 0.9rem;
+    }
+
+    .logo-main {
+        font-size: 1.75rem;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: flex-end;
+        gap: 1rem;
+        flex-wrap: wrap;
+        border-top: 1px solid rgba(255, 255, 255, 0.35);
+        padding-top: 0.4rem;
+        margin-top: 0.2rem;
+    }
+}
+
+
+/* ----------------------------------
+   HOME HERO
+---------------------------------- */
+
+.hero {
+    position: relative;
+    padding: 2.75rem 0 2.5rem;
+    background: var(--cream);
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top right, rgba(195, 32, 32, 0.18), transparent 60%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    max-width: 720px;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 3.1vw, 3rem);
+    line-height: 1.05;
+    margin-bottom: 0.8rem;
+    color: #111827;
+}
+
+.hero p {
+    color: #374151;
+    max-width: 36rem;
+    margin-bottom: 1.25rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.hero-content .btn {
+    margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        padding-top: 2.25rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* ----------------------------------
+   INFO STRIP (Visit / Hours / Call)
+---------------------------------- */
+
+.info-strip {
+    background: #fff;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 0.75rem 0;
+}
+
+.info-strip-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+}
+
+.info-strip h3 {
+    margin: 0 0 0.2rem;
+    font-size: 0.95rem;
+}
+
+.info-strip p {
+    margin: 0;
+}
+
+.info-strip a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--red);
+}
+
+.info-strip a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    .info-strip-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+/* ----------------------------------
+   SECTION HEADERS
+---------------------------------- */
+
+.section-header {
+    margin-bottom: 1.75rem;
+}
+
+.section {
+    background: #fff9f1;
+    /* soft cream */
+}
+
+
+.section-header h2 {
+    font-size: clamp(1.6rem, 2.3vw, 2rem);
+    margin: 0;
+    color: #111827;
+}
+
+.section-header p {
+    margin-top: 0.4rem;
+    max-width: 32rem;
+    color: #4b5563;
+}
+
+.section-header.centered {
+    text-align: center;
+}
+
+.section-header.centered p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ----------------------------------
+   HIGHLIGHT STRIP (deep red band on home)
+---------------------------------- */
+
+.black-section {
+    background: linear-gradient(135deg, #6b1111, #9b1b1b);
+    padding: 3rem 0;
+    position: relative;
+}
+
+.black-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top center, rgba(254, 249, 195, 0.28), transparent 65%);
+    opacity: 1;
+    pointer-events: none;
+}
+
+.black-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.black-section .section-header h2 {
+    color: #fef9c3;
+}
+
+.black-section .section-header p {
+    color: #fde68a;
+}
+
+
+/* ----------------------------------
+   PAGE HEROES (Menu / Cakes / Store)
+---------------------------------- */
+
+.page-hero {
+    background: #ffffff;
+    /* white section for separation */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 2.5rem 0 2rem;
+}
+
+
+.page-hero h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.9rem, 2.4vw, 2.3rem);
+    color: #111827;
+}
+
+.page-hero p {
+    margin: 0;
+    color: #4b5563;
+}
+
+
+/* ----------------------------------
+   MENU LISTS
+---------------------------------- */
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 1rem;
+    font-size: 0.95rem;
+}
+
+.menu-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px dashed rgba(148, 163, 184, 0.6);
+}
+
+.menu-list li:last-child {
+    border-bottom: none;
+}
+
+/* LEFT column: allow it to wrap without pushing price off */
+.menu-list li span:first-child {
+    font-weight: 500;
+    flex: 1 1 auto;
+    /* take remaining space */
+    min-width: 0;
+    /* CRITICAL: allows wrapping inside flex row */
+    white-space: normal;
+    overflow-wrap: anywhere;
+    /* prevents weird overflow on narrow screens */
+}
+
+/* RIGHT column: always stays right, never wraps */
+.menu-list li span:last-child {
+    flex: 0 0 auto;
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* Allow wrapping of the right column text in the soft cream cakes section */
+.section.soft-bg .menu-list li span:last-child {
+    white-space: normal;
+    word-break: break-word;
+    /* optional, helps on very narrow screens */
+}
+
+
+/* ----------------------------------
+   MAP EMBED (Store page)
+---------------------------------- */
+
+.map-embed,
+.map-embed iframe {
+    width: 100%;
+}
+
+.map-embed {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(15, 23, 42, 0.15);
+}
+
+.map-embed iframe {
+    display: block;
+    height: 320px;
+    border: 0;
+}
+
+@media (max-width: 640px) {
+    .map-embed iframe {
+        height: 260px;
+    }
+}
+
+
+/* ----------------------------------
+   FOOTER
+---------------------------------- */
+
+.site-footer {
+    background: var(--red);
+    color: #ffffff;
+    padding: 1.75rem 0;
+    border-top: 4px solid #000;
+}
+
+.site-footer .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem 1rem;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.site-footer h4 {
+    margin: 0 0 0.25rem;
+    text-shadow: 0 0 2px #000;
+}
+
+.site-footer a {
+    color: #fffbe8;
+    text-decoration: none;
+    text-shadow: 0 0 1px #000;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-meta {
+    display: flex;
+    gap: 0.5rem 1rem;
+    flex-wrap: wrap;
+}
+
+.footer-credits {
+    opacity: 0.9;
+}
+
+@media (max-width: 640px) {
+    .site-footer .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
