@@ -279,7 +279,7 @@
 
 .black-section .container {
     position: relative;
-    z-index: 1;
+    z-home: 1;
 }
 
 .black-section .section-header h2 {

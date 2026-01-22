@@ -281,7 +281,7 @@
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 100;
+    z-home: 100;
     padding: 1rem;
 }
 
