@@ -394,6 +394,45 @@
     overflow-wrap: break-word;
 }
 
+
+/* ================================
+   DETAIL LISTS (not prices)
+   e.g. Classic / Premium / Frosting / Specialty descriptions
+================================ */
+
+/* Use grid so columns NEVER overlap */
+.menu-list.menu-list-detail li {
+    display: grid;
+    grid-template-columns: 8.5rem 1fr;
+    /* label column + description column */
+    column-gap: 1rem;
+    align-items: start;
+}
+
+/* label */
+.menu-list.menu-list-detail li span:first-child {
+    font-weight: 700;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* description */
+.menu-list.menu-list-detail li span:last-child {
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    min-width: 0;
+}
+
+/* On small screens: stack label above description */
+@media (max-width: 520px) {
+    .menu-list.menu-list-detail li {
+        grid-template-columns: 1fr;
+        row-gap: 0.25rem;
+    }
+}
+
+
 /* ================================
    SAFETY: prevent heading breakage
 ================================ */
