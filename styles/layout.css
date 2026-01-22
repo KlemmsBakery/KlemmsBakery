@@ -339,32 +339,70 @@
     border-bottom: none;
 }
 
-/* LEFT column: allow it to wrap without pushing price off */
+/* ================================
+   DEFAULT (price-based lists)
+================================ */
+
+/* Left column (item name) */
 .menu-list li span:first-child {
     font-weight: 500;
     flex: 1 1 auto;
-    /* take remaining space */
     min-width: 0;
-    /* CRITICAL: allows wrapping inside flex row */
     white-space: normal;
-    overflow-wrap: anywhere;
-    /* prevents weird overflow on narrow screens */
+    overflow-wrap: break-word;
+    /* prevents overflow without letter stacking */
+    word-break: normal;
 }
 
-/* RIGHT column: always stays right, never wraps */
+/* Right column (price / note) */
 .menu-list li span:last-child {
     flex: 0 0 auto;
     text-align: right;
     white-space: nowrap;
 }
 
-/* Allow wrapping of the right column text in the soft cream cakes section */
+/* Allow wrapping of right column text in soft-bg sections */
 .section.soft-bg .menu-list li span:last-child {
     white-space: normal;
-    word-break: break-word;
-    /* optional, helps on very narrow screens */
+    overflow-wrap: break-word;
 }
 
+/* ================================
+   DETAIL LISTS (not prices)
+   e.g. Classic / Premium / Frosting
+================================ */
+
+.menu-list.menu-list-detail li {
+    align-items: flex-start;
+}
+
+/* Fixed label column (prevents "Clas / sic") */
+.menu-list.menu-list-detail li span:first-child {
+    flex: 0 0 7rem;
+    min-width: 7rem;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+/* Description column */
+.menu-list.menu-list-detail li span:last-child {
+    flex: 1 1 auto;
+    min-width: 0;
+    text-align: left;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+/* ================================
+   SAFETY: prevent heading breakage
+================================ */
+
+h3 {
+    overflow-wrap: normal;
+    word-break: normal;
+    hyphens: none;
+}
 
 /* ----------------------------------
    MAP EMBED (Store page)
@@ -444,5 +482,36 @@
     .site-footer .footer-inner {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+/* ----------------------------------
+   MOBILE: stack menu-list-detail rows
+---------------------------------- */
+@media (max-width: 520px) {
+
+    /* make each <li> stack instead of two columns */
+    .menu-list.menu-list-detail li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+
+    /* label becomes normal width */
+    .menu-list.menu-list-detail li span:first-child {
+        flex: 0 0 auto;
+        min-width: 0;
+        white-space: normal;
+        /* allow wrap if needed */
+        font-weight: 700;
+        /* optional: makes label stand out */
+    }
+
+    /* description/price becomes full width */
+    .menu-list.menu-list-detail li span:last-child {
+        flex: 0 0 auto;
+        width: 100%;
+        text-align: left;
+        white-space: normal;
     }
 }
