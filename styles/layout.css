@@ -110,7 +110,7 @@
 
 
 /* ----------------------------------
-   HOME HERO
+   index HERO
 ---------------------------------- */
 
 .hero {
@@ -258,7 +258,7 @@
 
 
 /* ----------------------------------
-   HIGHLIGHT STRIP (deep red band on home)
+   HIGHLIGHT STRIP (deep red band on index)
 ---------------------------------- */
 
 .black-section {
@@ -279,7 +279,7 @@
 
 .black-section .container {
     position: relative;
-    z-home: 1;
+    z-index: 1;
 }
 
 .black-section .section-header h2 {

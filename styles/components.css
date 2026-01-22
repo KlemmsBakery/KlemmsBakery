@@ -166,7 +166,7 @@
 
 
 /* ----------------------------------
-   BLACK-SECTION CARDS (homepage highlight strip)
+   BLACK-SECTION CARDS (indexpage highlight strip)
 ---------------------------------- */
 
 .black-section .grid-3>div,
@@ -281,7 +281,7 @@
     display: none;
     align-items: center;
     justify-content: center;
-    z-home: 100;
+    z-index: 100;
     padding: 1rem;
 }
 
