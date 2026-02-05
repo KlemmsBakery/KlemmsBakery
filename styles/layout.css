@@ -367,6 +367,51 @@
     overflow-wrap: break-word;
 }
 
+
+/* ================================
+   FIX: Home page "Must-Haves" lists
+   Keep left label readable, let right text wrap
+================================ */
+.section.soft-bg .menu-list:not(.menu-list-detail) li {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    /* fixed label column + flexible description */
+    column-gap: 0.9rem;
+    align-items: start;
+}
+
+/* Left label (Donuts / Muffins / Danish) */
+.section.soft-bg .menu-list:not(.menu-list-detail) li span:first-child {
+    white-space: nowrap;
+    /* prevents Da / nis / h */
+    overflow-wrap: normal;
+    word-break: normal;
+    font-weight: 600;
+}
+
+/* Right side description */
+.section.soft-bg .menu-list:not(.menu-list-detail) li span:last-child {
+    min-width: 0;
+    /* allows wrapping correctly inside the grid */
+    text-align: right;
+    white-space: normal;
+    /* keep your wrapping behavior */
+    overflow-wrap: break-word;
+}
+
+/* On very small screens, stack label above description */
+@media (max-width: 420px) {
+    .section.soft-bg .menu-list:not(.menu-list-detail) li {
+        grid-template-columns: 1fr;
+        row-gap: 0.25rem;
+    }
+
+    .section.soft-bg .menu-list:not(.menu-list-detail) li span:last-child {
+        text-align: left;
+    }
+}
+
+
 /* ================================
    DETAIL LISTS (not prices)
    e.g. Classic / Premium / Frosting
